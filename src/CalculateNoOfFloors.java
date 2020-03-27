@@ -27,7 +27,7 @@ public class CalculateNoOfFloors {
 
         int noOfPossibleFloors = noOfFloors(noOfCards);
 
-        System.out.println("with " + noOfCards + " cards. I can make " + noOfPossibleFloors + (noOfPossibleFloors > 0 ? " floors" : " floor"));
+        System.out.println("With " + noOfCards + " cards. I can make " + noOfPossibleFloors + (noOfPossibleFloors > 0 ? " floors" : " floor"));
     }
 
 
@@ -36,7 +36,7 @@ public class CalculateNoOfFloors {
 
         while (true) {
 
-            int closest = ((3 * (noOfFloors * noOfFloors)) + noOfFloors) / 2;
+            int closest = mathematicalFormulaToGetFloors(noOfFloors);
 
             if (noOfCards == closest) {
 
@@ -53,5 +53,9 @@ public class CalculateNoOfFloors {
 
         }
 
+    }
+
+    private static int mathematicalFormulaToGetFloors(int noOfFloors) {
+        return ((3 * (noOfFloors * noOfFloors)) + noOfFloors) / 2;
     }
 }
