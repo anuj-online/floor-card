@@ -10,9 +10,9 @@ public class CalculateNoOfFloors {
             if (args != null && args.length == 1 && args[0].matches(POSITIVE_INTEGER_REGEX)) { // if program arguments contain a positive integer
 
                 int noOfDecks = Integer.parseInt(args[0]);
-                int noOfCards = NO_OF_CARDS_IN_DECK * noOfDecks;
 
-                calculate(noOfCards);
+
+                calculate(noOfDecks);
 
             } else {
                 System.out.println(INPUT_IS_NOT_A_POSITIVE_INTEGER);
@@ -23,11 +23,11 @@ public class CalculateNoOfFloors {
 
     }
 
-    private static void calculate(int noOfCards) {
-
+    private static void calculate(int noOfDecks) {
+        int noOfCards = NO_OF_CARDS_IN_DECK * noOfDecks;
         int noOfPossibleFloors = noOfFloors(noOfCards);
 
-        System.out.println("With " + noOfCards + " cards. I can make " + noOfPossibleFloors + (noOfPossibleFloors > 0 ? " floors" : " floor"));
+        System.out.println("Number of deck(s) " + noOfDecks + " contains " +noOfCards  + " cards. I can make " + noOfPossibleFloors + " floor(s)");
     }
 
 
