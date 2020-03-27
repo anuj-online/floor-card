@@ -4,7 +4,7 @@ public class MyClass {
 
     public static void main(String[] args) throws Exception {
 
-        int noOfDecks = 6;
+        int noOfDecks = 1;
         int noOfCards = 52 * noOfDecks;
         IntStream intStream = IntStream.rangeClosed(0, noOfCards);
 
@@ -23,11 +23,13 @@ public class MyClass {
 
         int noOfPossibleFloors = getNoOfPossibleFloors(noOfCards);
 
-        System.out.println("with " + noOfCards + " cards. I can make " + noOfPossibleFloors + " floors");
+        System.out.println("with " + noOfCards + " cards. I can make " + noOfPossibleFloors + (noOfPossibleFloors > 0 ? " floors" : " floor"));
     }
 
     private static int getNoOfPossibleFloors(int noOfCards) throws Exception {
-        return noOfCards > 2 ? noOfFloors(noOfCards) : 0;
+        if( noOfCards < 2) return  0;
+        else if (noOfCards ==2 ) return 1;
+        return noOfFloors(noOfCards);
     }
 
 
